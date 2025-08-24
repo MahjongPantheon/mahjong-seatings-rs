@@ -1,0 +1,10 @@
+/target
+/.idea
+node_modules
+demo/dist/
+**/*.rs.bk
+Cargo.lock
+bin/
+pkg/
+release/
+wasm-pack.log
