@@ -3,7 +3,6 @@
 node_modules
 demo/dist/
 **/*.rs.bk
-Cargo.lock
 bin/
 pkg/
 release/
