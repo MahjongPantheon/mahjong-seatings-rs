@@ -8,9 +8,10 @@ mkdir -p release/node
 mv pkg/package.json pkg/.gitignore pkg/mahjong_seatings_rs.js pkg/mahjong_seatings_rs_bg.wasm release/node/
 cp src/mahjong_seatings_rs.d.ts release/node/
 cp src/mahjong_seatings_rs_node.js release/node/
+cp src/mahjong_seatings_rs_node.mjs release/node/
 sed -i -e 's/mahjong-seatings-rs/mahjong-seatings-rs-node/g' release/node/package.json
-sed -i -e 's/"main": "mahjong_seatings_rs.js"/"main": "mahjong_seatings_rs_node.js",\n  "types": "mahjong_seatings_rs.d.ts"/g' release/node/package.json
-sed -i -e 's/"files": \[/"files": \[\n    "mahjong_seatings_rs_node.js",\n    "mahjong_seatings_rs.d.ts",/g' release/node/package.json
+sed -i -e 's/"main": "mahjong_seatings_rs.js"/"main": "mahjong_seatings_rs_node.js",\n  "types": "mahjong_seatings_rs.d.ts",\n  "exports": {\n    ".": {\n      "types": ".\/mahjong_seatings_rs.d.ts",\n      "default": ".\/mahjong_seatings_rs_node.mjs"\n    }\n  }/g' release/node/package.json
+sed -i -e 's/"files": \[/"files": \[\n    "mahjong_seatings_rs_node.js",\n    "mahjong_seatings_rs_node.mjs",\n    "mahjong_seatings_rs.d.ts",/g' release/node/package.json
 cp README_NODE.md release/node/README.md
 
 rm -rf pkg
