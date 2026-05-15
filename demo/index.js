@@ -4,11 +4,6 @@ import {
   make_seating_swiss,
 } from "mahjong-seatings-rs-bundlers";
 
-const WindShuffle = {
-  Random: 0,
-  Balanced: 1,
-};
-
 console.log(
   "Shuffled seating",
   make_seating_shuffled({
@@ -28,7 +23,7 @@ console.log(
     ],
     groupsCount: 1,
     randFactor: 1234455,
-    windShuffle: WindShuffle.Random,
+    windShuffle: "random",
   }),
 );
 
@@ -51,7 +46,7 @@ console.log(
     ],
     step: 2,
     randFactor: 1234455,
-    windShuffle: WindShuffle.Random,
+    windShuffle: "random",
   }),
 );
 
@@ -73,6 +68,6 @@ console.log(
       [5, 6, 7, 8],
     ],
     randFactor: 1234455,
-    windShuffle: WindShuffle.Random,
+    windShuffle: "random",
   }),
 );
