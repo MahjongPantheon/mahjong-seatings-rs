@@ -1,7 +1,8 @@
 #![forbid(unsafe_code)]
 extern crate web_sys;
 use mahjong_seatings_rust::{
-    make_interval_seating, make_shuffled_seating, make_swiss_seating, PlayersMap, WindShuffle,
+    make_interval_seating, make_shuffled_seating, make_swiss_seating, update_wind_placing,
+    PlayersMap, WindShuffle,
 };
 use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::{from_value, to_value};
@@ -27,6 +28,14 @@ pub struct ShuffledSeatingInput {
 
 #[derive(Deserialize)]
 pub struct SwissSeatingInput {
+    pub players_map: PlayersMap,
+    pub previous_seatings: Vec<Vec<u32>>,
+    pub rand_factor: u64,
+    pub wind_shuffle: u8,
+}
+
+#[derive(Deserialize)]
+pub struct UpdateWindPlacingInput {
     pub players_map: PlayersMap,
     pub previous_seatings: Vec<Vec<u32>>,
     pub rand_factor: u64,
@@ -102,6 +111,26 @@ pub fn make_seating_swiss(val: JsValue) -> JsValue {
                     &i.previous_seatings,
                     i.rand_factor,
                     input_to_wind_shuffle(i.wind_shuffle),
+                ),
+            };
+            to_value(&result).unwrap()
+        }
+        Err(e) => to_value(&e.to_string()).unwrap(),
+    }
+}
+
+#[wasm_bindgen]
+pub fn update_wind_placing_only(val: JsValue) -> JsValue {
+    let i: Result<UpdateWindPlacingInput, serde_wasm_bindgen::Error> = from_value(val);
+
+    match i {
+        Ok(i) => {
+            let result = SeatingsCalcResult {
+                result: update_wind_placing(
+                    input_to_wind_shuffle(i.wind_shuffle),
+                    &i.players_map,
+                    &i.previous_seatings,
+                    i.rand_factor,
                 ),
             };
             to_value(&result).unwrap()

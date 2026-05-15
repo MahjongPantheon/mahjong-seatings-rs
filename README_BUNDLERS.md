@@ -37,7 +37,7 @@ console.log(
     ],
     groupsCount: 1,
     randFactor: 1234455,
-    windShuffle: 0, // 0 == WindShuffle::Random, 1 == WindShuffle::Balanced
+    windShuffle: "random", // other options: 'balanced'
   }),
 );
 
@@ -60,7 +60,7 @@ console.log(
     ],
     step: 2,
     randFactor: 1234455,
-    windShuffle: 0, // 0 == WindShuffle::Random, 1 == WindShuffle::Balanced
+    windShuffle: "random", // other options: 'balanced'
   }),
 );
 
@@ -82,9 +82,39 @@ console.log(
       [5, 6, 7, 8],
     ],
     randFactor: 1234455,
-    windShuffle: 0, // 0 == WindShuffle::Random, 1 == WindShuffle::Balanced
+    windShuffle: "random", // other options: 'balanced'
   }),
 );
 ```
 
 Note that returned lists contain player ids and their rating. First four elements are first table, next four are second table, etc.
+
+In case you already have the prepared seating and just want to randomize seatings by wind, you can use `update_wind_placing_only` function:
+
+```typescript
+import { update_wind_placing_only } from "mahjong-seatings-rs-bundlers";
+
+console.log(
+  "Updated wind placing",
+  update_wind_placing_only({
+    playersMap: {
+      "1": 1510,
+      "2": 1508,
+      "3": 1506,
+      "4": 1504,
+      "5": 1496,
+      "6": 1494,
+      "7": 1492,
+      "8": 1490,
+    },
+    previousSeatings: [
+      [1, 2, 3, 4],
+      [5, 6, 7, 8],
+    ],
+    randFactor: 1234455,
+    windShuffle: "random", // other options: 'balanced', 'prescripted'
+  }),
+);
+```
+
+Note that `windShuffle: 'prescripted'` option just returns input array as is, considering it being already shuffled manually.
