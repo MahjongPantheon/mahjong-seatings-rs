@@ -16,7 +16,7 @@ function _toWindShuffle(val) {
 module.exports = {
   make_seating_shuffled: function (val) {
     const input = {
-      players_map: Object.entries(val.playersMap).map(([k, v]) => [
+      players_map: val.playersMap.map(([k, v]) => [
         parseInt(k.toString(), 10),
         v,
       ]),
@@ -30,7 +30,7 @@ module.exports = {
 
   make_seating_interval: function (val) {
     const input = {
-      players_map: Object.entries(val.playersMap).map(([k, v]) => [
+      players_map: val.playersMap.map(([k, v]) => [
         parseInt(k.toString(), 10),
         v,
       ]),
@@ -44,7 +44,7 @@ module.exports = {
 
   make_seating_swiss: function (val) {
     const input = {
-      players_map: Object.entries(val.playersMap).map(([k, v]) => [
+      players_map: val.playersMap.map(([k, v]) => [
         parseInt(k.toString(), 10),
         v,
       ]),
@@ -57,7 +57,7 @@ module.exports = {
 
   update_wind_placing_only: function (val) {
     const input = {
-      players_map: Object.entries(val.playersMap).map(([k, v]) => [
+      players_map: val.playersMap.map(([k, v]) => [
         parseInt(k.toString(), 10),
         v,
       ]),

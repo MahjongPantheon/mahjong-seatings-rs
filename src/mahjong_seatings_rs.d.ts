@@ -1,4 +1,4 @@
-export type PlayersMap = Record<string | number, number>;
+export type PlayersMap = Array<[string | number, number]>;
 export type Seating = Array<[number, number]>;
 export type WindShuffle = "random" | "balanced" | "prescripted";
 

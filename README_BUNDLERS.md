@@ -21,16 +21,16 @@ import {
 console.log(
   "Shuffled seating",
   make_seating_shuffled({
-    playersMap: {
-      "1": 1500,
-      "2": 1500,
-      "3": 1500,
-      "4": 1500,
-      "5": 1500,
-      "6": 1500,
-      "7": 1500,
-      "8": 1500,
-    },
+    playersMap: [
+      [1, 1500],
+      [2, 1500],
+      [3, 1500],
+      [4, 1500],
+      [5, 1500],
+      [6, 1500],
+      [7, 1500],
+      [8, 1500],
+    ],
     previousSeatings: [
       [1, 2, 3, 4],
       [5, 6, 7, 8],
@@ -44,16 +44,16 @@ console.log(
 console.log(
   "Interval seating",
   make_seating_interval({
-    playersMap: {
-      "1": 1510,
-      "2": 1508,
-      "3": 1506,
-      "4": 1504,
-      "5": 1496,
-      "6": 1494,
-      "7": 1492,
-      "8": 1490,
-    },
+    playersMap: [
+      [1, 1510],
+      [2, 1508],
+      [3, 1506],
+      [4, 1504],
+      [5, 1496],
+      [6, 1494],
+      [7, 1492],
+      [8, 1490],
+    ],
     previousSeatings: [
       [1, 2, 3, 4],
       [5, 6, 7, 8],
@@ -67,16 +67,16 @@ console.log(
 console.log(
   "Swiss seating",
   make_seating_swiss({
-    playersMap: {
-      "1": 1510,
-      "2": 1508,
-      "3": 1506,
-      "4": 1504,
-      "5": 1496,
-      "6": 1494,
-      "7": 1492,
-      "8": 1490,
-    },
+    playersMap: [
+      [1, 1510],
+      [2, 1508],
+      [3, 1506],
+      [4, 1504],
+      [5, 1496],
+      [6, 1494],
+      [7, 1492],
+      [8, 1490],
+    ],
     previousSeatings: [
       [1, 2, 3, 4],
       [5, 6, 7, 8],
@@ -97,16 +97,16 @@ import { update_wind_placing_only } from "mahjong-seatings-rs-bundlers";
 console.log(
   "Updated wind placing",
   update_wind_placing_only({
-    playersMap: {
-      "1": 1510,
-      "2": 1508,
-      "3": 1506,
-      "4": 1504,
-      "5": 1496,
-      "6": 1494,
-      "7": 1492,
-      "8": 1490,
-    },
+    playersMap: [
+      [1, 1510],
+      [2, 1508],
+      [3, 1506],
+      [4, 1504],
+      [5, 1496],
+      [6, 1494],
+      [7, 1492],
+      [8, 1490],
+    ],
     previousSeatings: [
       [1, 2, 3, 4],
       [5, 6, 7, 8],
