@@ -57,7 +57,7 @@ checksum = "20ca4c746dc692bb7ea79d351bcfdce139f77bd24b5d65b9dbaa94f2d6b6fe71"
 
 [[package]]
 name = "mahjong-seatings-rs"
-version = "3.0.0"
+version = "4.0.0"
 dependencies = [
  "mahjong-seatings-rust",
  "serde",
@@ -68,8 +68,8 @@ dependencies = [
 
 [[package]]
 name = "mahjong-seatings-rust"
-version = "3.0.0"
-source = "git+https://github.com/MahjongPantheon/mahjong-seatings-rust.git#55b351a5ab4ddfa4b8952d4a577a1bb0a531c631"
+version = "4.0.0"
+source = "git+https://github.com/MahjongPantheon/mahjong-seatings-rust.git#5244b6779526004fa7c338cb58ef4708cf89cb66"
 dependencies = [
  "lcg-rand",
  "serde",
