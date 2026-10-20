@@ -3,6 +3,8 @@ export type Seating = Array<[number, number]>;
 export type WindShuffle = "random" | "balanced" | "prescripted";
 
 export type ShuffledSeatingInput = {
+  /** Number of real players per table. Defaults to 4. */
+  tableSize?: 3 | 4;
   playersMap: PlayersMap;
   previousSeatings: number[][];
   groupsCount: number;
@@ -11,6 +13,8 @@ export type ShuffledSeatingInput = {
 };
 
 export type IntervalSeatingInput = {
+  /** Number of real players per table. Defaults to 4. */
+  tableSize?: 3 | 4;
   playersMap: PlayersMap;
   previousSeatings: number[][];
   step: number;
@@ -19,6 +23,8 @@ export type IntervalSeatingInput = {
 };
 
 export type SwissSeatingInput = {
+  /** Number of real players per table. Defaults to 4. */
+  tableSize?: 3 | 4;
   playersMap: PlayersMap;
   previousSeatings: number[][];
   randFactor: number;
@@ -26,6 +32,8 @@ export type SwissSeatingInput = {
 };
 
 export type UpdateWindPlacingInput = {
+  /** Number of real players per table. Defaults to 4. */
+  tableSize?: 3 | 4;
   playersMap: PlayersMap;
   previousSeatings: number[][];
   randFactor: number;
