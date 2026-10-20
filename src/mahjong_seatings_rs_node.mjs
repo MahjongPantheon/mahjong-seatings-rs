@@ -20,6 +20,7 @@ export function make_seating_shuffled(val) {
       v,
     ]),
     previous_seatings: val.previousSeatings,
+      table_size: val.tableSize ?? 4,
     groups_count: val.groupsCount,
     rand_factor: val.randFactor,
     wind_shuffle: _toWindShuffle(val.windShuffle),
@@ -34,6 +35,7 @@ export function make_seating_interval(val) {
       v,
     ]),
     previous_seatings: val.previousSeatings,
+      table_size: val.tableSize ?? 4,
     step: val.step,
     rand_factor: val.randFactor,
     wind_shuffle: _toWindShuffle(val.windShuffle),
@@ -48,6 +50,7 @@ export function make_seating_swiss(val) {
       v,
     ]),
     previous_seatings: val.previousSeatings,
+      table_size: val.tableSize ?? 4,
     rand_factor: val.randFactor,
     wind_shuffle: _toWindShuffle(val.windShuffle),
   };
@@ -61,6 +64,7 @@ export function update_wind_placing_only(val) {
       v,
     ]),
     previous_seatings: val.previousSeatings,
+      table_size: val.tableSize ?? 4,
     rand_factor: val.randFactor,
     wind_shuffle: _toWindShuffle(val.windShuffle),
   };

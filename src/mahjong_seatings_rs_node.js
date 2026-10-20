@@ -21,6 +21,7 @@ module.exports = {
         v,
       ]),
       previous_seatings: val.previousSeatings,
+      table_size: val.tableSize ?? 4,
       groups_count: val.groupsCount,
       rand_factor: val.randFactor,
       wind_shuffle: _toWindShuffle(val.windShuffle),
@@ -35,6 +36,7 @@ module.exports = {
         v,
       ]),
       previous_seatings: val.previousSeatings,
+      table_size: val.tableSize ?? 4,
       step: val.step,
       rand_factor: val.randFactor,
       wind_shuffle: _toWindShuffle(val.windShuffle),
@@ -49,6 +51,7 @@ module.exports = {
         v,
       ]),
       previous_seatings: val.previousSeatings,
+      table_size: val.tableSize ?? 4,
       rand_factor: val.randFactor,
       wind_shuffle: _toWindShuffle(val.windShuffle),
     };
@@ -62,6 +65,7 @@ module.exports = {
         v,
       ]),
       previous_seatings: val.previousSeatings,
+      table_size: val.tableSize ?? 4,
       rand_factor: val.randFactor,
       wind_shuffle: _toWindShuffle(val.windShuffle),
     };
